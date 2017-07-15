@@ -4,9 +4,21 @@ To install, place these files in a new directory (such as "CortexIPrep") under y
 
 Next, add a configuration stanza under the Cortex application.conf file, like this:
 
-*    # Cortex-IPrep: this analyzer needs your API key for Packetmail.net
+<pre>
+analyzer {
+  # Absolute path where you have pulled the Cortex-Analyzers repository.
+  path = "/analyzers/Cortex-Analyzers/analyzers"
+
+...
+
+  # Analyzer configuration
+  config {
+    # Cortex-IPrep: this analyzer needs your API key for Packetmail.net
     CortexIPrep {
       key = "YOUR_PACKETMAIL_API_KEY"
-    }*
+    }
+    
+...
 
+</pre>
 Please report any issues or feature requests here!
