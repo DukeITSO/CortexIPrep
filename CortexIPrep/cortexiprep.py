@@ -25,8 +25,8 @@ class CortexIPrep(Analyzer):
         total_reputation_observations = len(raw[ 'packetmail_iprep' ]) - 5
         taxonomies = [ ]
         level = "info"
-        namespace = "ASNLookup"
-        predicate = "AS"
+        namespace = "IPRep"
+        predicate = "TI"
         value = "Rep Hits: {0}".format(total_reputation_observations)
         taxonomies.append(self.build_taxonomy(level, namespace, predicate, value))
 
