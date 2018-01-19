@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # encoding: utf-8
+
+"""
+Cortex Analyzer used to look up IP addresses against the Packetmail IP Reputation Service (Punch++). Not a public
+resource, so you'll have to ask around for access.
+"""
 import requests
 from cortexutils.analyzer import Analyzer
 
@@ -17,8 +22,15 @@ class CortexIPrep(Analyzer):
         """
         'raw' is the json that's returned in the report
         """
+        total_reputation_observations = len(raw[ 'packetmail_iprep' ]) - 5
+        taxonomies = [ ]
+        level = "info"
+        namespace = "ASNLookup"
+        predicate = "AS"
+        value = "Rep Hits: {0}".format(total_reputation_observations)
+        taxonomies.append(self.build_taxonomy(level, namespace, predicate, value))
 
-        return dict(total_reputation_observations=len(raw['packetmail_iprep']) - 5)
+        return {"taxonomies": taxonomies}
 
     def search_punch(self, ip, apikey):
         url = 'https://www.packetmail.net/iprep.php/{0}'.format(ip)
