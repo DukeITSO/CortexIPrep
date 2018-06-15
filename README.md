@@ -2,23 +2,6 @@ This is an analyzer for [Cortex](https://github.com/CERT-BDF/Cortex/blob/master/
 
 To install, place these files in a new directory (such as "CortexIPrep") under your Cortex Analyzers directory.
 
-Next, add a configuration stanza under the Cortex application.conf file, like this:
+Configure the Analyzer within the Cortex Interface; you must provide an API key for this to work correctly.
 
-<pre>
-analyzer {
-  # Absolute path where you have pulled the Cortex-Analyzers repository.
-  path = "/analyzers/Cortex-Analyzers/analyzers"
-
-...
-
-  # Analyzer configuration
-  config {
-    # Cortex-IPrep: this analyzer needs your API key for Packetmail.net
-    CortexIPrep {
-      key = "YOUR_PACKETMAIL_API_KEY"
-    }
-    
-...
-
-</pre>
 Please report any issues or feature requests here!
