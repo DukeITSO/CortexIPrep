@@ -42,9 +42,9 @@ class CortexIPrep(Analyzer):
         if ret['query_result'] != 'Success':
             raise Exception('Remote service returned unsuccessfully:{0}'.format(repr(ret)))
 
-        # Remove keys we don't need
-        for key in ['origin', 'disclaimer', 'IPs_in_collection', 'MaxMind_Free_GeoIP',
-                    'IP_Lookup_History']:
+        # Remove keys we don't need; thanks to nathan@packetmail.net for the whitelist approach
+        for key, value in ret.items():
+          if not isinstance(value,dict) and not key == "_id" and not key == "created_on":
             ret.pop(key, None)
         return ret
 
