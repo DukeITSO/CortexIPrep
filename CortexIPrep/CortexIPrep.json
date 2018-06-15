@@ -1,18 +1,20 @@
 {
-    "name": "CortexIPrep",
-    "version": "2.0",
-    "author": "Jesse Bowling",
-    "url": "https://github.com/JesseBowling",
-    "license": "AGPL-V3",
-    "baseConfig": "CortexIPrep",
-    "config": {
-      "check_tlp": false,
-      "max_tlp":3,
-      "service":""
-    },
-    "description": "Find what reputation entries Packetmail.net has for an IP",
-    "dataTypeList": ["ip"],
-    "command": "CortexIPrep/cortexiprep.py"
+  "name": "CortexIPrep",
+  "version": "2.0",
+  "author": "Jesse Bowling",
+  "url": "https://github.com/JesseBowling",
+  "license": "AGPL-V3",
+  "baseConfig": "CortexIPrep",
+  "config": {
+    "check_tlp": false,
+    "max_tlp": 3,
+    "service": ""
+  },
+  "description": "Find what reputation entries Packetmail.net has for an IP",
+  "dataTypeList": [
+    "ip"
+  ],
+  "command": "CortexIPrep/cortexiprep.py",
   "configurationItems": [
     {
       "name": "key",
@@ -22,5 +24,4 @@
       "required": true
     }
   ]
-
 }
